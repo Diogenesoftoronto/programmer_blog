@@ -1,3 +1,22 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "John ~B. Goodenough"
+description: "rant about inadequacy and improvement"
+publishDate: "8 Aug 2022"
+followMe:
+  username: "chocosoydev"
+  href: "https://twitter.com/chocosoydev"
+halfTheMeaning: 21
+heroImage:
+  src: "/assets/blog/introducing-astro.jpg"
+  alt: "Space shuttle leaving curved trail in the sky"
+setup: |
+  import LikeButton from "../../components/LikeButton"
+  import FollowMe from "../../components/FollowMe.astro"
+---
+
+
+
 Be warned, this article is for those willing to peer into the mind of a person trying to get their life together at 3am. See [this](https://www.youtube.com/watch?v=3oabHBtt5ic) for reference.
 
 Just wanted to rant a bit about the fact that I feel inadequate about getting a job in tech until I have a much deeper understanding of computer science. I feel this way even after I have helped design course for students learning the subject and have helped many people understand it. The fact is that I am still pretty terrible at Leetcode easy problems. I want to be able to easily solve medium problems and be able to solve hard problems with a decent amount of time given. This is possible if I really study for about two months. It is getting to the end of the line for me being in my parent's home now. 
@@ -28,3 +47,9 @@ Yeah so, So I need a job but I am not actually applying to them because I actual
 That leaves me with a few extra tips like pacing, breaking up my work environments by going outside, and continue with my reading and writing habits. Possibly some scripting for my podcasts would be nice as well. 
 
 Now that I have written all this its 4am and my brain has partially stopped working. Good luck future me. This is my first blogpost for github 🥴.
+
+<FollowMe username={frontmatter.followMe.username} href={frontmatter.followMe.href} />
+
+Access all exported properties with JSX expressions. For example, let's find the meaning of life: **{frontmatter.halfTheMeaning * 2}**
+
+If this seems cool, consider giving my post a like with this Preact component: <LikeButton pageUrl={frontmatter.url} client:load />
